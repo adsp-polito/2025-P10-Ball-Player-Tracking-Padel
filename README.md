@@ -14,7 +14,7 @@ The pipeline:
 - aggregates detections to compute positional heatmaps and relative inter-player distances for downstream performance analysis.
 
 <p align="center">
-  <img src="checkpoint/pipeline.png" alt="Pipeline overview" width="600">
+  <img src="Checkpoints/pipeline.png" alt="Pipeline overview" width="600">
 </p>
 
 _Figure: Overview of the proposed pipeline_
@@ -53,7 +53,7 @@ Using the predicted player positions, we compute the average distance between te
 This provides an intuitive view of where each team spends most of the time and how they distribute themselves in attack and defense.
 
 <p align="center">
-  <img src="checkpoint/heatmap.png" alt="Pipeline overview" width="500">
+  <img src="Checkpoints/heatmap.png" alt="Pipeline overview" width="500">
 </p>
 
 _Figure: Heatmap_

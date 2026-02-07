@@ -63,7 +63,7 @@ _Figure: Heatmap_
 The repository is organized as:
 ```
 2025-P10-Ball-Player-Tracking-Padel
-    ├── checkpoint/                                 # Project checkpoint pdf
+    ├── Checkpoints/                                 # Project checkpoint pdf
         └── Checkpoint1.pdf
         └── Checkpoint2.pdf
         └── Checkpoint3.pdf
@@ -106,13 +106,10 @@ and extract it locally before running the scripts
 6. Run the `CodeStatistics.ipynb` script to compute player heatmaps and inter-player distance statistics from the predictions
 
 **Option 2 – Only reproduce statistics (using existing predictions)**:
-- Use the provided prediction files in `predictions/`, which were generated with our best YOLO configuration (`yolo11n`, `imgsz=1280`)
+- Use the provided prediction files in `predictions/`, which were generated with our best YOLO configuration (`yolo10n`, `imgsz=1280`)
 - Run `CodeStatistics.ipynb` to produce heatmap and inter-player distance
 
 This second option avoids downloading the full dataset and running heavy GPU computations, and is recommended if you are mainly interested in the analysis part of the project.
-
-
-
 
 ## Team
 - Andrea Cauda s343386 - s343386@studenti.polito.it

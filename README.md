@@ -31,7 +31,7 @@ We focus on two full-match videos:
 Each frame is annotated with *players*, *ball* and *shot-type* labels.
 
 ## Main Results
-**Fine-tuned vs pretrained (YOLO11n, imgsz=1280)**
+**Fine-tuned vs pretrained (YOLO10n, imgsz=1280)**
 | Metric     | Class       | Δ (fine-tuned vs pretrained)
 |-----------|-------------|------------------------------:
 | Precision | person      | +13.2%                       
@@ -39,7 +39,7 @@ Each frame is annotated with *players*, *ball* and *shot-type* labels.
 | Recall    | person      | +6.6%                        
 | Recall    | sport ball  | +54.7%                       
 
-These results show that fine-tuning YOLO11n on the PadelTracker100 dataset substantially improves detection quality, especially for the **sport ball** class. In particular, we observe a large recall gain on the ball, while maintaining a consistent precision improvement on both players and ball, confirming the benefit of domain-specific adaptation over the pretrained model.
+These results show that fine-tuning YOLO10n on the PadelTracker100 dataset substantially improves detection quality, especially for the **sport ball** class. In particular, we observe a large recall gain on the ball, while maintaining a consistent precision improvement on both players and ball, confirming the benefit of domain-specific adaptation over the pretrained model.
 
 **Inter-player distance**\
 Using the predicted player positions, we compute the average distance between teammates over the full match:
@@ -67,6 +67,9 @@ The repository is organized as:
         └── Checkpoint1.pdf
         └── Checkpoint2.pdf
         └── Checkpoint3.pdf
+        └── Exam_slide.pdf                          # slide used to present the project at the exam
+        └── heatmap.png                             # images used in the readme     
+        └── pipeline.png 
     ├── predictions/                                # Model prediction outputs (JSON)
         └── predictionsF.json                       # prediction of the female match
         └── predictionsM.json                       # prediction of the male match
@@ -78,7 +81,8 @@ The repository is organized as:
         └── prova.py                                # scratch script for quick tests
         └── ready.py                                # prepare YOLO dataset
         └── train.py                                # train YOLO models across different configurations
-    ├── LINKS-Padel_Object_Tracking.pdf        
+    ├── LINKS-Padel_Object_Tracking.pdf
+    ├── Ball and Players Tracking in Padel Matches Videos.pdf       # paper     
     ├── .gitignore                    
     └── README.md                                              
 ```
@@ -101,9 +105,9 @@ and extract it locally before running the scripts
 2. Run the `extraction.py` script to extract frames from raw videos and aggregate the labels
 3. Use the `ready.py` script to generate the data.yaml file, which defines the train/test/validation image paths, the number of classes, and their names for YOLO training and inference
 4. Run the `inference.py` script to evaluate the pretrained model on the test frames
-- Run the `train.py` script to fine-tune the model on the padel dataset
-5. Run the `predictions.py` script to obtain bounding-box predictions for the women’s and men’s matches
-6. Run the `CodeStatistics.ipynb` script to compute player heatmaps and inter-player distance statistics from the predictions
+5. Run the `train.py` script to fine-tune the model on the padel dataset
+6. Run the `predictions.py` script to obtain bounding-box predictions for the women’s and men’s matches
+7. Run the `CodeStatistics.ipynb` script to compute player heatmaps and inter-player distance statistics from the predictions
 
 **Option 2 – Only reproduce statistics (using existing predictions)**:
 - Use the provided prediction files in `predictions/`, which were generated with our best YOLO configuration (`yolo10n`, `imgsz=1280`)

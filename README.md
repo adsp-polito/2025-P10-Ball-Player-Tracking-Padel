@@ -71,7 +71,7 @@ The repository is organized as:
         └── predictionsF.json                       # prediction of the female match
         └── predictionsM.json                       # prediction of the male match
     ├── script/                                     # Scripts
-        └── CodeStatisticsDeliverable.ipynb         # 
+        └── CodeStatistics.ipynb                    # to reproduce heatmap and inter-player distance 
         └── extraction.py                           # extracts frames from raw videos
         └── inference.py                            # use the pretrained model to generate the baseline predictions
         └── predictions.py                          # use the best fine-tuned model to produce final predictions
